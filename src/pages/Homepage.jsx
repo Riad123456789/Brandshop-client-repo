@@ -1,12 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import Header from "../component/Header";
 import Navber from "../component/Navber";
-import Brand from "../brand/Brand";
+import Brand from "../brandCard/Brand";
+import Foother from "../component/Foother";
 
 const Homepage = () => {
 
     const AllBrand = useLoaderData()
-    console.log(AllBrand)
 
     return (
         <div>
@@ -21,6 +21,7 @@ const Homepage = () => {
                 }
 
             </div>
+            <Foother></Foother>
 
         </div>
     );

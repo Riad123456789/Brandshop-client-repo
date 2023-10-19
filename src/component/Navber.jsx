@@ -1,6 +1,17 @@
-import img from "../assets/6e9b8a32104799.566f5063e673e.jpg"
+import { NavLink } from "react-router-dom";
+
 
 const Navber = () => {
+
+
+    const NavLinks = <>
+        <NavLink to={'/'}><li> <p>Home</p></li></NavLink>
+        <NavLink to={'/add products'}><li> <p>add products </p></li></NavLink>
+        <NavLink to={'/My Cart'}> <li> <p> My Cart </p></li></NavLink>
+        <NavLink to={'/contact'}><li> <p>Contact</p></li></NavLink>
+    </>
+
+
     return (
         <div>
             <div className="navbar bg-[#ff3737]">
@@ -10,15 +21,8 @@ const Navber = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
+
+                            {NavLinks}
                         </ul>
                     </div>
 
@@ -29,21 +33,11 @@ const Navber = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-                        <li tabIndex={0}>
-                            <details>
-                                <summary>Parent</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        {NavLinks}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <a className="btn btn-sm">Login</a>
                 </div>
             </div>
         </div>
