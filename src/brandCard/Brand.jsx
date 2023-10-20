@@ -4,6 +4,8 @@ const Brand = ({ brand }) => {
 
     const { BrandName } = brand;
 
+    console.log(BrandName)
+
     return (
         <div>
             <Link to={`/productsRoutePage/${BrandName}`}>
