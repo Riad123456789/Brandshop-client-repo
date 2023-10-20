@@ -1,11 +1,11 @@
-import { FaFacebook, FaTwitter, FaAmazonPay, FaPhone,  } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaAmazonPay, FaPhone, FaLinkedinIn } from 'react-icons/fa';
 
 
 
 const Header = () => {
     return (
         <div>
-            <div className='  md:flex items-center justify-around p-2  bg-[#8b1f1f]'>
+            <div className='  md:flex items-center justify-around p-2  bg-lime-600'>
                 <div className='flex md: items-center justify-between gap-1  '>
                     <FaPhone className=''></FaPhone>
                     <h1 className='text-white'>+880 3224 257</h1>
@@ -18,8 +18,9 @@ const Header = () => {
 
                 <div className='flex gap-5 justify-center items-center  '>
                     <FaAmazonPay></FaAmazonPay>
-                    <FaFacebook className='text-[blue] '></FaFacebook>
+                    <FaFacebook className=' '></FaFacebook>
                     <FaTwitter></FaTwitter>
+                    <FaLinkedinIn></FaLinkedinIn>
 
                 </div>
             </div>

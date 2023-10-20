@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import Navber from '../component/Navber';
+import Header from '../component/Header';
+import Foother from '../component/Foother';
 
 
 const LoginPage = () => {
@@ -16,9 +18,10 @@ const LoginPage = () => {
 
     return (
         <div>
+            <Header></Header>
             <Navber></Navber>
 
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-slate-400">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login now!</h1>
@@ -28,13 +31,13 @@ const LoginPage = () => {
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text font-medium ">Email :</span>
                                 </label>
                                 <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text font-medium ">Password :</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
@@ -42,14 +45,16 @@ const LoginPage = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn bg-lime-700 text-white">Login</button>
                             </div>
 
-                            <p><Link to={'/register'}>register</Link></p>
+                            <p className=''>Please Register Here : <Link className='text-indigo-700' to={'/register'}>Register</Link></p>
                         </form>
                     </div>
                 </div>
             </div>
+
+            <Foother></Foother>
         </div>
     );
 };

@@ -4,7 +4,7 @@ const AddProductCard = ({ product }) => {
     const { name, _id } = product
 
     const handledeleted = (_id) => {
-        fetch(`http://localhost:5000/deletedprodutc/${_id}`, {
+        fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/deletedprodutc/${_id}`, {
 
             method: "DELETE"
 

@@ -1,6 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import Navber from '../component/Navber';
 import AddProductCard from '../brandCard/AddProductCard';
+import Header from '../component/Header';
 
 const MyCartPage = () => {
 
@@ -9,6 +10,7 @@ const MyCartPage = () => {
     console.log(loderData)
     return (
         <div>
+            <Header></Header>
             <Navber></Navber>
             <div className='grid grid-cols-2'>
 

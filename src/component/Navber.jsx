@@ -1,20 +1,21 @@
 import { NavLink } from "react-router-dom";
-
+import img from "../assets/8016_1400505170_evergreen2.jpg"
 
 const Navber = () => {
 
 
     const NavLinks = <>
-        <NavLink to={'/'}><li> <p>Home</p></li></NavLink>
-        <NavLink to={'/add products'}><li> <p>add products </p></li></NavLink>
-        <NavLink to={'/My Cart'}> <li> <p> My Cart </p></li></NavLink>
-        <NavLink to={'/contact'}><li> <p>Contact</p></li></NavLink>
+
+        <NavLink to={'/'}> <li className="hover:bg-lime-600 rounded-lg"><p className="font-medium"> Home</p></li></NavLink>
+        <NavLink to={'/add products'}><li className="hover:bg-lime-600 rounded-lg"> <p className="font-medium">Add products </p></li></NavLink>
+        <NavLink to={'/My Cart'}><li className="hover:bg-lime-600 rounded-lg"><p className="font-medium"> My Cart </p></li></NavLink>
+        <NavLink to={'/contact'}><li className="hover:bg-lime-600 rounded-lg"><p className="font-medium">Contact</p></li></NavLink>
     </>
 
 
     return (
         <div>
-            <div className="navbar bg-[#ff3737]">
+            <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,17 +28,17 @@ const Navber = () => {
                     </div>
 
                     <div className="">
-                        <img className='w-48' src="" alt="" />
+                        <img className='w-[250px]' src={img} alt="" />
                     </div>
 
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center  hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {NavLinks}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn btn-sm">Login</a>
+                    <a className="btn btn-sm bg-lime-600 hover:bg-white">Login</a>
                 </div>
             </div>
         </div>

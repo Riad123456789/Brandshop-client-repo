@@ -11,6 +11,7 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import DetailsPage from "../pages/DetailsPage";
 import UpdateProductPage from "../pages/UpdateProductPage";
+import ErrorPage from "../pages/ErrorPage";
 
 
 
@@ -22,30 +23,32 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Homepage></Homepage>,
-        loader: () => fetch('http://localhost:5000/BrandName')
+        loader: () => fetch(' https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/BrandName'),
+        errorElement:<ErrorPage></ErrorPage>
+        
       },
       {
         path: "/add products",
         element: <AddProductPage></AddProductPage>,
-        loader:()=>fetch('http://localhost:5000/cartproduct')
+        loader: () => fetch(' https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/cartproduct')
       },
       {
         path: "/productsRoutePage/:BrandName",
         element: <ProductsRoutePage></ProductsRoutePage>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.BrandName}`),
+        loader: ({ params }) => fetch(` https://server-site-91iajw0w2-riads-projects-d9eea291.vercel.app /${params.BrandName}`),
       },
 
 
       {
         path: "/Update/:id",
         element: <UpdateProductPage></UpdateProductPage>,
-        loader: ({ params }) => fetch(`http://localhost:5000/updateproducts/${params.id}`)
+        loader: ({ params }) => fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/updateproducts/${params.id}`)
 
       },
       {
         path: "/details/:name",
         element: <DetailsPage></DetailsPage>,
-        loader: ({ params }) => fetch(`http://localhost:5000/product/${params.name}`)
+        loader: ({ params }) => fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/product/${params.name}`)
 
       },
 
@@ -53,7 +56,7 @@ const router = createBrowserRouter([
       {
         path: "/My Cart",
         element: <MyCartPage></MyCartPage>,
-        loader: () => fetch("http://localhost:5000/cartproduct")
+        loader: () => fetch(" https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/cartproduct")
 
       },
       {

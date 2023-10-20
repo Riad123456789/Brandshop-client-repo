@@ -1,3 +1,5 @@
+import Foother from '../component/Foother';
+import Header from '../component/Header';
 import Navber from '../component/Navber';
 
 const AddProductPage = () => {
@@ -17,7 +19,7 @@ const AddProductPage = () => {
 
         const Products = { name, brandname, type, price, shortdescription, rating, photo }
 
-        fetch('http://localhost:5000/products', {
+        fetch(' https://server-site-91iajw0w2-riads-projects-d9eea291.vercel.app ', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -39,59 +41,66 @@ const AddProductPage = () => {
 
     return (
         <div>
+            <Header></Header>
             <Navber></Navber>
 
+            <div className='bg-slate-400 p-16'>
 
-            <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
 
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">name</span>
-                    </label>
-                    <input type="text" name='name' placeholder="name" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Brand Name</span>
-                    </label>
-                    <input type="text" name='brandname' placeholder="Brand Name" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Type</span>
-                    </label>
-                    <input type="text" name='type' placeholder="Type" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Price</span>
-                    </label>
-                    <input type="number,text" name='price' placeholder="price" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Short description</span>
-                    </label>
-                    <input type="text" name='shortdescription' placeholder="Short description" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">rating</span>
-                    </label>
-                    <input type="number" name='rating' placeholder="rating" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Image</span>
-                    </label>
-                    <input type="text" name='photo' placeholder="Image url" className="input input-bordered" required />
-                </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-base font-medium">Name : </span>
+                        </label>
+                        <input type="text text-base font-medium" name='name' placeholder="name" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-base font-medium">Brand Name :</span>
+                        </label>
+                        <input type="text text-base font-medium" name='brandname' placeholder="Brand Name" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-base font-medium">Type :</span>
+                        </label>
+                        <input type="text text-base font-medium" name='type' placeholder="Type" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-base font-medium">Price :</span>
+                        </label>
+                        <input type="number,text text-base font-medium" name='price' placeholder="price" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-base font-medium">Short description :</span>
+                        </label>
+                        <input type="text text-base font-medium" name='shortdescription' placeholder="Short description" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-base font-medium">Rating :</span>
+                        </label>
+                        <input type="number" name='rating' placeholder="rating" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-base font-medium">Image :</span>
+                        </label>
+                        <input type="text text-base font-medium" name='photo' placeholder="Image url" className="input input-bordered" required />
+                    </div>
 
-                <input className='btn btn-secondary w-full' type="submit" value="add" />
+                    <div className='mt-5'>
+                        <input className='btn btn-success bg-lime-600 w-full' type="submit" value="Add products" />
+                    </div>
 
 
-            </form>
+                </form>
 
+            </div>
+
+            <Foother></Foother>
 
         </div>
     );
