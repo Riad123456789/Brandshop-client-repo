@@ -12,6 +12,7 @@ import RegisterPage from "../pages/RegisterPage";
 import DetailsPage from "../pages/DetailsPage";
 import UpdateProductPage from "../pages/UpdateProductPage";
 import ErrorPage from "../pages/ErrorPage";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 
 
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/add products",
-        element: <AddProductPage></AddProductPage>,
+        element: <PrivateRoute><AddProductPage></AddProductPage></PrivateRoute>,
         loader: () => fetch(' https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/cartproduct')
       },
       {
@@ -40,24 +41,24 @@ const router = createBrowserRouter([
 
       {
         path: "/details/:name",
-        element: <DetailsPage></DetailsPage>,
+        element: <PrivateRoute> <DetailsPage></DetailsPage></PrivateRoute>,
         loader: ({ params }) => fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/product/${params.name}`),
-        errorElement:<ErrorPage></ErrorPage>
+        errorElement: <ErrorPage></ErrorPage>
 
       },
 
       {
         path: "/Update/:id",
-        element: <UpdateProductPage></UpdateProductPage>,
+        element: <PrivateRoute><UpdateProductPage></UpdateProductPage></PrivateRoute>,
         loader: ({ params }) => fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/updateproducts/${params.id}`)
 
       },
 
       {
         path: "/My Cart",
-        element: <MyCartPage></MyCartPage>,
+        element: <PrivateRoute> <MyCartPage></MyCartPage></PrivateRoute>,
         loader: () => fetch(" https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/cartproduct"),
-        errorElement:<ErrorPage></ErrorPage>
+        errorElement: <ErrorPage></ErrorPage>
 
       },
       {

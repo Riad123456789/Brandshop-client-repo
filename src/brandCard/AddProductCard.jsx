@@ -1,3 +1,6 @@
+import swal from 'sweetalert';
+
+
 
 const AddProductCard = ({ product }) => {
 
@@ -15,7 +18,7 @@ const AddProductCard = ({ product }) => {
 
                 console.log(data)
                 if (data.deletedCount > 0) {
-                    alert("deleted")
+                    swal("deleted")
 
                 }
 

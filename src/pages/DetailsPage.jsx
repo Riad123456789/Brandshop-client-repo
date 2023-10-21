@@ -2,6 +2,7 @@ import { useLoaderData } from 'react-router-dom';
 import Navber from '../component/Navber';
 import Header from '../component/Header';
 import Foother from '../component/Foother';
+import swal from 'sweetalert';
 
 const DetailsPage = () => {
     const loderdata = useLoaderData();
@@ -22,7 +23,7 @@ const DetailsPage = () => {
                 console.log(data)
 
                 if (data.insertedId) {
-                    alert("success")
+                    swal("successfully add ")
                 }
             })
     }

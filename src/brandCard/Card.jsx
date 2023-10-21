@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+// import Slider from '../component/Slider';
 
 const Card = ({ productCard }) => {
 
@@ -6,6 +7,8 @@ const Card = ({ productCard }) => {
 
     return (
         <div className=''>
+           
+
             <div className=" card-compact border p-2 w-96 mx-auto overflow-hidden  bg-lime-600 shadow-lg">
                 <figure><img className='w-[600px] h-64' src={photo} alt="Shoes" /></figure>
                 <div className="card-body">

@@ -1,7 +1,7 @@
 import Foother from '../component/Foother';
 import Header from '../component/Header';
 import Navber from '../component/Navber';
-
+import swal from 'sweetalert';
 const AddProductPage = () => {
 
 
@@ -31,7 +31,7 @@ const AddProductPage = () => {
                 console.log(data)
 
                 if (data.insertedId) {
-                    alert("success")
+                    swal("successfully add")
                 }
             })
 

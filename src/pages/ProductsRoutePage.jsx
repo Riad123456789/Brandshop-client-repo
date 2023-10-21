@@ -3,6 +3,7 @@ import Navber from '../component/Navber';
 import Card from '../brandCard/Card';
 import Header from '../component/Header';
 import Foother from '../component/Foother';
+import Slider from '../component/Slider';
 
 
 const ProductsRoutePage = () => {
@@ -12,7 +13,8 @@ const ProductsRoutePage = () => {
         <div>
             <Header></Header>
             <Navber></Navber>
-
+            <Slider></Slider>
+            
             <div className='grid  gap-12 mt-4 md:grid-cols-2'>
                 {
 
