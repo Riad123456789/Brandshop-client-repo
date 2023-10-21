@@ -1,13 +1,24 @@
+import { useContext } from 'react';
 import swal from 'sweetalert';
+import { AuthContext } from '../provider/AuthProvider';
 
 
 
 const AddProductCard = ({ product }) => {
 
+
+
+    const { loading } = useContext(AuthContext)
+
+    if (loading) {
+        return <span className="loading loading-spinner loading-md  "></span>
+    }
+
+
     const { name, photo, _id, type, price, shortdescription, brandname, rating } = product
 
     const handledeleted = (_id) => {
-        fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/deletedprodutc/${_id}`, {
+        fetch(` https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app /deletedprodutc/${_id}`, {
 
             method: "DELETE"
 
@@ -32,7 +43,7 @@ const AddProductCard = ({ product }) => {
                 <figure><img src={photo} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-white">{brandname}</h2>
-                    <h2 className="card-title">{ shortdescription}</h2>
+                    <h2 className="card-title">{shortdescription}</h2>
                     <div className="card-actions justify-end">
                         <button onClick={() => handledeleted(_id)} className="btn btn-outline text-white">deleted</button>
                     </div>

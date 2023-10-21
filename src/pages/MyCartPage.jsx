@@ -3,10 +3,20 @@ import Navber from '../component/Navber';
 import AddProductCard from '../brandCard/AddProductCard';
 import Header from '../component/Header';
 import Foother from '../component/Foother';
+import { useContext } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
 
 const MyCartPage = () => {
 
+
+    const { loading } = useContext(AuthContext)
+
     const loderData = useLoaderData();
+
+    if (loading) {
+        return <span className="loading loading-spinner loading-md  "></span>
+    }
+
 
     return (
         <div>

@@ -8,9 +8,16 @@ import { AuthContext } from '../provider/AuthProvider';
 
 const LoginPage = () => {
 
-    const { LoginUser } = useContext(AuthContext)
+
+    const { loading, LoginUser, } = useContext(AuthContext)
     const navigate = useNavigate();
     const Location = useLocation();
+
+
+    if (loading) {
+        return <span className="loading loading-spinner loading-md  "></span>
+    }
+
 
     const handleLogin = e => {
 

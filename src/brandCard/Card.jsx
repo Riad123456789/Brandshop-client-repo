@@ -7,7 +7,7 @@ const Card = ({ productCard }) => {
 
     return (
         <div className=''>
-           
+
 
             <div className=" card-compact border p-2 w-96 mx-auto overflow-hidden  bg-lime-600 shadow-lg">
                 <figure><img className='w-[600px] h-64' src={photo} alt="Shoes" /></figure>
@@ -21,7 +21,16 @@ const Card = ({ productCard }) => {
                     <div className='flex justify-around items-center'>
                         <p>Type : {type}</p>
                         <p> Price : {price}</p>
-                        <p>{rating}</p>
+
+                        rating :  <div className="rating rating-sm">
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                        </div>
+
+                        {/* <p>{rating}</p> */}
                     </div>
                     <p>{shortdescription}</p>
                     <div className="card-actions justify-between">

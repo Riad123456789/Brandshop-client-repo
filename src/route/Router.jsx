@@ -24,25 +24,27 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Homepage></Homepage>,
-        loader: () => fetch(' https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/BrandName'),
+        loader: () => fetch(' https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app/BrandName'),
         errorElement: <ErrorPage></ErrorPage>
 
       },
       {
         path: "/add products",
         element: <PrivateRoute><AddProductPage></AddProductPage></PrivateRoute>,
-        loader: () => fetch(' https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/cartproduct')
+        loader: () => fetch(' https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app/cartproduct'),
+        errorElement: <ErrorPage></ErrorPage>
       },
       {
         path: "/productsRoutePage/:brandname",
         element: <ProductsRoutePage></ProductsRoutePage>,
         loader: ({ params }) => fetch(`https://server-site-8k6035klh-riads-projects-d9eea291.vercel.app/products/${params.brandname}`),
+        errorElement: <ErrorPage></ErrorPage>
       },
 
       {
         path: "/details/:name",
         element: <PrivateRoute> <DetailsPage></DetailsPage></PrivateRoute>,
-        loader: ({ params }) => fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/product/${params.name}`),
+        loader: ({ params }) => fetch(` https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app/product/${params.name}`),
         errorElement: <ErrorPage></ErrorPage>
 
       },
@@ -50,28 +52,32 @@ const router = createBrowserRouter([
       {
         path: "/Update/:id",
         element: <PrivateRoute><UpdateProductPage></UpdateProductPage></PrivateRoute>,
-        loader: ({ params }) => fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/updateproducts/${params.id}`)
+        loader: ({ params }) => fetch(` https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app/updateproducts/${params.id}`),
+        errorElement: <ErrorPage></ErrorPage>
 
       },
 
       {
         path: "/My Cart",
         element: <PrivateRoute> <MyCartPage></MyCartPage></PrivateRoute>,
-        loader: () => fetch(" https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/cartproduct"),
+        loader: () => fetch(" https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app/cartproduct"),
         errorElement: <ErrorPage></ErrorPage>
 
       },
       {
         path: "/contact",
-        element: <ContactPage></ContactPage>
+        element: <ContactPage></ContactPage>,
+        errorElement: <ErrorPage></ErrorPage>
       },
       {
         path: "/login",
-        element: <LoginPage></LoginPage>
+        element: <LoginPage></LoginPage>,
+        errorElement: <ErrorPage></ErrorPage>
       },
       {
         path: "/register",
-        element: <RegisterPage></RegisterPage>
+        element: <RegisterPage></RegisterPage>,
+        errorElement: <ErrorPage></ErrorPage>
       }
 
     ]

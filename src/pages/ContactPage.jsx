@@ -1,10 +1,9 @@
-import Navber from '../component/Navber';
-import LoginPage from './LoginPage';
+import RegisterPage from './RegisterPage';
 
 const ContactPage = () => {
     return (
         <div>
-            <LoginPage></LoginPage>
+         <RegisterPage></RegisterPage>
         </div>
     );
 };

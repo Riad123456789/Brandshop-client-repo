@@ -10,7 +10,7 @@ const ProductsRoutePage = () => {
     const products = useLoaderData()
 
     return (
-        <div>
+        <div className='overflow-hidden'>
             <Header></Header>
             <Navber></Navber>
             <Slider></Slider>

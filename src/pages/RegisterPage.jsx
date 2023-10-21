@@ -8,7 +8,12 @@ import { FaGoogle } from 'react-icons/fa';
 
 const RegisterPage = () => {
 
-    const { CreatUser, googleLogin } = useContext(AuthContext)
+    const { CreatUser, googleLogin, loading } = useContext(AuthContext)
+
+    if (loading) {
+        return <span className="loading loading-spinner loading-md  "></span>
+    }
+
 
     const handleRegister = e => {
         e.preventDefault()

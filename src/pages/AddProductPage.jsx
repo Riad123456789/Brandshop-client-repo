@@ -1,9 +1,19 @@
+import { useContext } from 'react';
 import Foother from '../component/Foother';
 import Header from '../component/Header';
 import Navber from '../component/Navber';
 import swal from 'sweetalert';
+import { AuthContext } from '../provider/AuthProvider';
+
+
+
 const AddProductPage = () => {
 
+    const { loading } = useContext(AuthContext)
+
+    if ( loading) {
+        return <span className="loading loading-spinner loading-md  "></span>
+    }
 
     const handleSubmit = e => {
         e.preventDefault();

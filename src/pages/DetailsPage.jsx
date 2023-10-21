@@ -11,7 +11,7 @@ const DetailsPage = () => {
     const handleClick = () => {
 
 
-        fetch(' https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/addproduct', {
+        fetch(' https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app/addproduct', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

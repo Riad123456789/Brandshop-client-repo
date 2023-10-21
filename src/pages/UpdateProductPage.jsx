@@ -2,6 +2,8 @@ import Foother from '../component/Foother';
 import Header from '../component/Header';
 import Navber from '../component/Navber';
 import { useLoaderData } from 'react-router-dom';
+import swal from 'sweetalert';
+
 
 const UpdateProductPage = () => {
 
@@ -23,7 +25,7 @@ const UpdateProductPage = () => {
 
         const UpdateProducts = { name, brandname, type, price, shortdescription, rating, photo }
 
-        fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/updateproducts/${_id}`, {
+        fetch(` https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app/updateproducts/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -33,6 +35,10 @@ const UpdateProductPage = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+
+                if(data.acknowledged){
+                    swal("successfully update")
+                }
 
             })
     }
@@ -90,9 +96,9 @@ const UpdateProductPage = () => {
                         </label>
                         <input type="text" name='photo' defaultValue={photo} placeholder="Image url" className="input input-bordered" required />
                     </div>
-
+                    <input className='btn btn-success bg-lime-500 w-full mt-4' type="submit" value="submit" />
                 </form>
-                <input className='btn btn-success bg-lime-500 w-full mt-4' type="submit" value="submit" />
+
 
             </div>
             <Foother></Foother>
