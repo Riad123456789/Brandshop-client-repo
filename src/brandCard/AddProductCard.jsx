@@ -18,7 +18,7 @@ const AddProductCard = ({ product }) => {
     const { name, photo, _id, type, price, shortdescription, brandname, rating } = product
 
     const handledeleted = (_id) => {
-        fetch(` https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app /deletedprodutc/${_id}`, {
+        fetch(` https://server-site-5laplgulj-riads-projects-d9eea291.vercel.app/deletedprodutc/${_id}`, {
 
             method: "DELETE"
 
