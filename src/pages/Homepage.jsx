@@ -4,6 +4,7 @@ import Navber from "../component/Navber";
 import Brand from "../brandCard/Brand";
 import Foother from "../component/Foother";
 import Banner from "../component/Banner";
+import SectionOne from "../component/SectionOne";
 
 const Homepage = () => {
 
@@ -33,6 +34,7 @@ const Homepage = () => {
                 }
 
             </div>
+            <SectionOne></SectionOne>
             <Foother></Foother>
 
         </div>

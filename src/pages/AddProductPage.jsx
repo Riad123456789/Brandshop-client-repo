@@ -19,7 +19,7 @@ const AddProductPage = () => {
 
         const Products = { name, brandname, type, price, shortdescription, rating, photo }
 
-        fetch(' https://server-site-91iajw0w2-riads-projects-d9eea291.vercel.app ', {
+        fetch('https://server-site-8k6035klh-riads-projects-d9eea291.vercel.app ', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -44,7 +44,7 @@ const AddProductPage = () => {
             <Header></Header>
             <Navber></Navber>
 
-            <div className='bg-slate-400 p-16'>
+            <div className='bg-slate-400 p-16 '>
 
                 <form onSubmit={handleSubmit}>
 

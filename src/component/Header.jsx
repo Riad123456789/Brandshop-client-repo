@@ -11,7 +11,7 @@ const Header = () => {
                     <h1 className='text-white'>+880 3224 257</h1>
                 </div>
 
-                <h1 className='text-center text-white '>
+                <h1 className=' sm: hidden text-center text-white md:block '>
                     Shop on the go, download our app. Details
                 </h1>
 

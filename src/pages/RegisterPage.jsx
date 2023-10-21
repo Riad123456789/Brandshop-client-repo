@@ -4,11 +4,11 @@ import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Header from '../component/Header';
 import Foother from '../component/Foother';
-
+import { FaGoogle } from 'react-icons/fa';
 
 const RegisterPage = () => {
 
-    const { CreatUser } = useContext(AuthContext)
+    const { CreatUser, googleLogin } = useContext(AuthContext)
 
     const handleRegister = e => {
         e.preventDefault()
@@ -21,14 +21,26 @@ const RegisterPage = () => {
         console.log(name, email, password)
         CreatUser(email, password, name)
             .then(result => {
-                console.log(result)
+                console.log(result.user)
             })
-            .then(error => {
+            .catch(error => {
                 console.log(error)
             })
 
-
     }
+
+
+
+
+    const handleGooglelogin = (media) => {
+        media()
+            .then(res => {
+                console.log(res.user)
+            }
+            )
+            .catch()
+    }
+
 
 
     return (
@@ -48,7 +60,7 @@ const RegisterPage = () => {
                                 <label className="label">
                                     <span className="label-text  font-medium">Name :</span>
                                 </label>
-                                <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                                <input type="text" name='name' placeholder="name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -67,6 +79,9 @@ const RegisterPage = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn  bg-lime-700 text-white" >Register</button>
+                            </div>
+                            <div className="form-control mt-6">
+                                <button onClick={() => handleGooglelogin(googleLogin)} className="btn  bg-lime-700 text-white" ><FaGoogle></FaGoogle>Google</button>
                             </div>
 
                             <p> Please Login Here  <Link className='text-blue-700' to={'/login'}>Login</Link></p>

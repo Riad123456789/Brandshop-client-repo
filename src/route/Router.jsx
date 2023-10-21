@@ -24,8 +24,8 @@ const router = createBrowserRouter([
         path: '/',
         element: <Homepage></Homepage>,
         loader: () => fetch(' https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/BrandName'),
-        errorElement:<ErrorPage></ErrorPage>
-        
+        errorElement: <ErrorPage></ErrorPage>
+
       },
       {
         path: "/add products",
@@ -33,11 +33,18 @@ const router = createBrowserRouter([
         loader: () => fetch(' https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/cartproduct')
       },
       {
-        path: "/productsRoutePage/:BrandName",
+        path: "/productsRoutePage/:brandname",
         element: <ProductsRoutePage></ProductsRoutePage>,
-        loader: ({ params }) => fetch(` https://server-site-91iajw0w2-riads-projects-d9eea291.vercel.app /${params.BrandName}`),
+        loader: ({ params }) => fetch(`https://server-site-8k6035klh-riads-projects-d9eea291.vercel.app/products/${params.brandname}`),
       },
 
+      {
+        path: "/details/:name",
+        element: <DetailsPage></DetailsPage>,
+        loader: ({ params }) => fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/product/${params.name}`),
+        errorElement:<ErrorPage></ErrorPage>
+
+      },
 
       {
         path: "/Update/:id",
@@ -45,18 +52,12 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/updateproducts/${params.id}`)
 
       },
-      {
-        path: "/details/:name",
-        element: <DetailsPage></DetailsPage>,
-        loader: ({ params }) => fetch(` https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/product/${params.name}`)
-
-      },
-
 
       {
         path: "/My Cart",
         element: <MyCartPage></MyCartPage>,
-        loader: () => fetch(" https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/cartproduct")
+        loader: () => fetch(" https://server-site-66hc4ismv-riads-projects-d9eea291.vercel.app/cartproduct"),
+        errorElement:<ErrorPage></ErrorPage>
 
       },
       {
