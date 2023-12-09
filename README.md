@@ -1,10 +1,10 @@
 ## Poject Name : ( Brandshop )
 
 ## Features Overview : 
-  - you can find your life partner from my website .
-  - first you can  create your own your biodata here and your created biodata   can see other people .
-  - you can choose your life partner by filtering age and division and gander
-
+  - you can donation your wested food here .
+  - and also you can buy another wasted food if you interest donate some money you can give the other person donate some money
+  - if you interest the food you can request first the food owner
+  - 
 # Technology :
 ### Front-End :
    - Material UI
