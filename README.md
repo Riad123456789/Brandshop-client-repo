@@ -7,7 +7,7 @@
   - 
 # Technology :
 ### Front-End :
-   - Material UI
+   - flowbite
 ### CSS-Framework :
    - Tailwind CSS
 ### Back-End :
